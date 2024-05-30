@@ -16,7 +16,6 @@ root.render(
     <Router>
       <div className="app-container">
         <Header />
-        <main className="main-content"></main>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/Logement/:id" element={<Logement />} />
