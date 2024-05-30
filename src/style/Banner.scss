@@ -1,0 +1,27 @@
+@import 'mixins';
+
+.banner {
+  position: relative;
+  text-align: center;
+  @include full-width;
+  margin-bottom: 50px;
+  @include black-background;
+  @include border-radius;
+  .banner-image {
+    @include full-width;
+    height: 223px;
+    opacity: 0.2;
+    @include border-radius;
+  }
+  .banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'Montserrat';
+    box-shadow: 0px 4px 4px 0px #00000000;
+    @include text-white;
+  }
+}

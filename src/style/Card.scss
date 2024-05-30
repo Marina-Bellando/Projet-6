@@ -1,0 +1,27 @@
+@import 'mixins';
+
+.card {
+  position: relative;
+  width: 340px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-right: 50px;
+  .card:last-child {
+    margin-right: 0;
+  }
+  .card-image {
+    @include full-width;
+    height: 100%;
+  }
+  .card-title {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white !important;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Montserrat';
+    width: 50%;
+  }
+}
