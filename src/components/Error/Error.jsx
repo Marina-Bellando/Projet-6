@@ -3,7 +3,7 @@ import '../../style/Error.scss'
 
 function Error() {
   return (
-    <main className="main-content">
+    <main className="error-main">
       <div className="error-container">
         <h1 className="error-title">404</h1>
         <p className="error-message">
