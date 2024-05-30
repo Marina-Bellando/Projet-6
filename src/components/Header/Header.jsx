@@ -10,12 +10,22 @@ const Header = () => {
       <nav className="nav">
         <ul className="nav-list">
           <li className="nav-item">
-            <NavLink exact to="/" activeClassName="active">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? 'nav-link active' : 'nav-link'
+              }
+            >
               Accueil
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/APropos" activeClassName="active">
+            <NavLink
+              to="/APropos"
+              className={({ isActive }) =>
+                isActive ? 'nav-link active' : 'nav-link'
+              }
+            >
               A Propos
             </NavLink>
           </li>
