@@ -1,0 +1,17 @@
+@import 'mixins';
+
+.banniere {
+  position: relative;
+  text-align: center;
+  @include full-width;
+  margin-bottom: 50px;
+  @include black-background;
+  @include border-radius;
+  .banniere-image {
+    @include full-width;
+    height: 223px;
+    @include border-radius;
+    object-fit: cover;
+    filter: brightness(0.6);
+  }
+}
