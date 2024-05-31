@@ -14,6 +14,7 @@ const Home = () => {
             key={appartement.id}
             cover={appartement.cover}
             title={appartement.title}
+            id={appartement.id}
           />
         ))}
       </div>

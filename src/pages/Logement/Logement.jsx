@@ -1,71 +1,62 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import Carousel from 'react-bootstrap/Carousel';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react'
+import { useParams } from 'react-router-dom'
+import { appartementListe } from '../../datas/appartementListe'
+import Slideshow from '../../components/Slideshow/Slideshow'
+import Collapse from '../APropos/Collapse'
+import '../../style/Logement.scss'
 
-const LogementDetail = () => {
-  const { id } = useParams();
+const Logement = () => {
+  const { id } = useParams()
+  const cleanId = id.startsWith(':') ? id.substring(1) : id
+  const logement = appartementListe.find(
+    (appartement) => appartement.id === cleanId
+  )
+  if (!logement) {
+    return <div>Logement non trouvé</div>
+  }
 
-
-  const logementDetails = {
-    id,
-    title: `Titre du logement ${id}`,
-    location: `Location du logement ${id}`,
-    tags: ['Tag1', 'Tag2', 'Tag3'],
-    pictures: [
-      'https://via.placeholder.com/800x400?text=Image+1',
-      'https://via.placeholder.com/800x400?text=Image+2',
-      'https://via.placeholder.com/800x400?text=Image+3'
-    ],
-    description: `Description du logement ${id}`,
-    equipments: ['Equipement1', 'Equipement2', 'Equipement3']
-  };
-
-  const [showDescription, setShowDescription] = useState(false);
-  const [showEquipments, setShowEquipments] = useState(false);
+  const ratingStars = []
+  for (let i = 0; i < 5; i++) {
+    ratingStars.push(
+      <span key={i} className={`star ${i < logement.rating ? 'filled' : ''}`}>
+        ★
+      </span>
+    )
+  }
 
   return (
-    <div>
-      <Carousel>
-        {logementDetails.pictures.map((picture, index) => (
-          <Carousel.Item key={index}>
-            <img
-              className="d-block w-100"
-              src={picture}
-              alt={`Slide ${index}`}
-            />
-          </Carousel.Item>
-        ))}
-      </Carousel>
-
-      <h1>{logementDetails.title}</h1>
-      <h2>{logementDetails.location}</h2>
-
-      <div>
-        {logementDetails.tags.map((tag, index) => (
-          <button key={index} className="btn btn-secondary m-1">
-            {tag}
-          </button>
-        ))}
+    <div className="logement">
+      <Slideshow pictures={logement.pictures} />
+      <div className="logement-info">
+        <div className="logement-details">
+          <h1>{logement.title}</h1>
+          <p>{logement.location}</p>
+          <div className="tags">
+            {logement.tags.map((tag, index) => (
+              <span key={index} className="tag">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="logement-host">
+          <div className="host-info">
+            <img src={logement.host.picture} alt={logement.host.name} />
+            <p>{logement.host.name}</p>
+          </div>
+          <div className="logement-rating">{ratingStars}</div>
+        </div>
       </div>
-
-      <button className="btn btn-primary mt-3" onClick={() => setShowDescription(!showDescription)}>
-        Description
-      </button>
-      {showDescription && <p>{logementDetails.description}</p>}
-
-      <button className="btn btn-primary mt-3" onClick={() => setShowEquipments(!showEquipments)}>
-        Équipements
-      </button>
-      {showEquipments && (
+      <Collapse title="Description">{logement.description}</Collapse>
+      <Collapse title="Équipements">
         <ul>
-          {logementDetails.equipments.map((equipment, index) => (
-            <li key={index}>{equipment}</li>
+          {logement.equipments.map((item, index) => (
+            <li key={index}>{item}</li>
           ))}
         </ul>
-      )}
+      </Collapse>
     </div>
-  );
-};
+  )
+}
 
-export default LogementDetail;
+export default Logement
