@@ -7,6 +7,7 @@
   background-color: white;
   padding: 0;
   @include margins;
+  margin-top: 50px;
   .nav-list {
     display: flex;
     list-style: none;
