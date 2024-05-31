@@ -3,25 +3,29 @@
 .card {
   position: relative;
   width: 340px;
+  height: 340px !important;
   overflow: hidden;
   border-radius: 10px;
   margin-top: 50px;
   margin-right: 50px;
-  .card:last-child {
-    margin-right: 0;
-  }
-  .card-image {
-    @include full-width;
-    height: 100%;
-  }
-  .card-title {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    color: white !important;
-    font-size: 18px;
-    font-weight: 700;
-    font-family: 'Montserrat';
-    width: 50%;
-  }
+}
+.card:last-child {
+  margin-right: 0;
+}
+.card-image {
+  @include full-width;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.card-title {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white !important;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Montserrat';
+  width: 50%;
 }

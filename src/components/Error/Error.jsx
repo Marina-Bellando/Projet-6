@@ -1,8 +1,19 @@
+import { Link } from 'react-router-dom'
+import '../../style/Error.scss'
+
 function Error() {
   return (
-    <div>
-      <h1>Oups 🙈 Cette page n'existe pas</h1>
-    </div>
+    <main className="error-main">
+      <div className="error-container">
+        <h1 className="error-title">404</h1>
+        <p className="error-message">
+          Oups! La page que vous demandez n'existe pas.
+        </p>
+        <Link className="error-link" to="/">
+          Retourner sur la page d’accueil
+        </Link>
+      </div>
+    </main>
   )
 }
 

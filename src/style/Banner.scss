@@ -10,8 +10,9 @@
   .banner-image {
     @include full-width;
     height: 223px;
-    opacity: 0.2;
     @include border-radius;
+    object-fit: cover;
+    filter: brightness(0.5);
   }
   .banner-text {
     position: absolute;
