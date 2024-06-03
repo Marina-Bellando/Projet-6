@@ -5,7 +5,6 @@
   text-align: center;
   @include full-width;
   margin-bottom: 50px;
-  @include black-background;
   @include border-radius;
   .banner-image {
     @include full-width;
