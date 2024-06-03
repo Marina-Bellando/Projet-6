@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../../style/Collapse.scss'
 import chevronIcon from '../../assets/Chevron.png'
 
-const Collapse = ({ title, children }) => {
+const Collapse = ({ title, children, customClass = '' }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleCollapse = () => {
@@ -10,7 +10,7 @@ const Collapse = ({ title, children }) => {
   }
 
   return (
-    <div className="collapseAPropos">
+    <div className={`collapseAPropos ${customClass}`}>
       <div className="collapseAPropos-header" onClick={toggleCollapse}>
         <h2>{title}</h2>
         <img
