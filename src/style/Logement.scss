@@ -1,19 +1,26 @@
+@import 'mixins';
 .logement {
-  padding: 20px;
+  @include margins;
   h1 {
-    font-size: 2rem;
-    margin-top: 20px;
+    font-size: 36px;
+    margin-top: 30px;
+    color: #ff6060;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    margin-bottom: 5px;
   }
   p {
-    font-size: 1.2rem;
-    color: grey;
+    font-size: 18px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 30px;
   }
   .logement-info {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 20px;
-
     .logement-details {
       flex: 1;
     }
@@ -22,6 +29,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      margin-bottom: 20px;
       .tag {
         background-color: #ff6060;
         color: white;
@@ -29,41 +37,77 @@
         border-radius: 5px;
         font-family: 'Montserrat';
         font-size: 14px;
-        font-weight: 500;
+        font-weight: 700;
+        border-radius: 10px;
       }
     }
     .logement-host {
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-top: 30px;
       .host-info {
         display: flex;
-        flex-direction: column;
         align-items: center;
-        text-align: center;
-        margin-bottom: 10px;
+        text-align: left;
+        .host-name {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          margin-right: 10px;
+          .host-first-name,
+          .host-last-name {
+            font-family: 'Montserrat';
+            font-size: 18px;
+            font-weight: 500;
+            color: #ff6060;
+            margin: 0;
+          }
+        }
         img {
           width: 64px;
           height: 64px;
           border-radius: 50%;
-          margin-bottom: 5px;
-        }
-        p {
-          font-family: 'Montserrat';
-          font-size: 14px;
-          font-weight: 500;
+          margin-top: 5px;
         }
       }
       .logement-rating {
         display: flex;
         gap: 5px;
+        margin-top: 15px;
         .star {
-          font-size: 20px;
+          font-size: 28px;
           color: #e3e3e3;
           &.filled {
             color: #ff6060;
           }
         }
+      }
+    }
+  }
+  .logement-collapses {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    .collapse {
+      flex: 1;
+    }
+    .collapseAPropos {
+      width: 50%;
+    }
+    .collapseAPropos-content {
+      padding-left: 15px;
+      width: 100%;
+      height: 100%;
+      ul {
+        margin-block-start: 0;
+        list-style-type: none;
+        margin-block-end: 0;
+        padding-inline-start: 0;
+      }
+      &.open {
+        padding-bottom: 20px;
+        padding-top: 20px;
       }
     }
   }

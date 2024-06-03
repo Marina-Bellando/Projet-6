@@ -15,6 +15,7 @@ const Logement = () => {
     return <div>Logement non trouvé</div>
   }
 
+  const [firstName, lastName] = logement.host.name.split(' ')
   const ratingStars = []
   for (let i = 0; i < 5; i++) {
     ratingStars.push(
@@ -41,20 +42,27 @@ const Logement = () => {
         </div>
         <div className="logement-host">
           <div className="host-info">
+            <div className="host-name">
+              <p className="host-first-name">{firstName}</p>
+              <p className="host-last-name">{lastName}</p>
+            </div>
             <img src={logement.host.picture} alt={logement.host.name} />
-            <p>{logement.host.name}</p>
           </div>
           <div className="logement-rating">{ratingStars}</div>
         </div>
       </div>
-      <Collapse title="Description">{logement.description}</Collapse>
-      <Collapse title="Équipements">
-        <ul>
-          {logement.equipments.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
-      </Collapse>
+      <div className="logement-collapses">
+        <Collapse title="Description" customClass="logement-collapse">
+          {logement.description}
+        </Collapse>
+        <Collapse title="Équipements" customClass="logement-collapse">
+          <ul>
+            {logement.equipments.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </Collapse>
+      </div>
     </div>
   )
 }
