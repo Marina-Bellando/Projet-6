@@ -56,11 +56,10 @@
         background-color: #ff6060;
         @include text-white;
         padding: 5px 10px;
-        @include border-radius(5);
         @include family;
         @include size(14);
         @include weight(700);
-        @include border-radius(10);
+        @include border-radius(10px);
         @media (max-width: 640px) {
           @include size(10);
         }

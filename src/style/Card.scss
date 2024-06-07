@@ -3,13 +3,13 @@
 .card {
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
+  @include border-radius(10px);
 
   .card-image {
     width: 340px;
     height: 340px;
     object-fit: cover;
-    border-radius: 10px;
+    @include border-radius(10px);
     @media (max-width: 640px) {
       @include full-width;
       margin-bottom: 20px;
