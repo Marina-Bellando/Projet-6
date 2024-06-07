@@ -1,9 +1,8 @@
 @import 'mixins';
 
 .apropos {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-column-center;
   @include margins;
   min-height: calc(100vh - 400px);
+  @include responsive-margin;
 }

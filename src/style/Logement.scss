@@ -1,28 +1,47 @@
 @import 'mixins';
+
 .logement {
   @include margins;
+  @media (max-width: 640px) {
+    margin: 20px;
+  }
   h1 {
-    font-size: 36px;
+    @include size(36);
     margin-top: 30px;
     color: #ff6060;
-    font-family: 'Montserrat';
-    font-weight: 500;
+    @include family;
+    @include weight(500);
     margin-bottom: 5px;
+    @media (max-width: 640px) {
+      @include size(18);
+      margin-top: 15px;
+    }
   }
   p {
-    font-size: 18px;
-    font-family: 'Montserrat';
-    font-weight: 500;
+    @include size(18);
+    @include family;
+    @include weight(500);
     margin-top: 0;
     margin-bottom: 30px;
+    @media (max-width: 640px) {
+      @include size(14);
+      margin-bottom: 0px;
+    }
   }
   .logement-info {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 20px;
+    @media (max-width: 640px) {
+      flex-direction: column;
+      margin-bottom: 0px;
+    }
     .logement-details {
       flex: 1;
+      @media (max-width: 640px) {
+        @include full-width;
+      }
     }
     .tags {
       margin-top: 10px;
@@ -30,22 +49,34 @@
       flex-wrap: wrap;
       gap: 10px;
       margin-bottom: 20px;
+      @media (max-width: 640px) {
+        margin-bottom: 0;
+      }
       .tag {
         background-color: #ff6060;
-        color: white;
+        @include text-white;
         padding: 5px 10px;
-        border-radius: 5px;
-        font-family: 'Montserrat';
-        font-size: 14px;
-        font-weight: 700;
-        border-radius: 10px;
+        @include border-radius(5);
+        @include family;
+        @include size(14);
+        @include weight(700);
+        @include border-radius(10);
+        @media (max-width: 640px) {
+          @include size(10);
+        }
       }
     }
     .logement-host {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      @include flex-column-center;
       margin-top: 30px;
+      @media (max-width: 640px) {
+        margin-top: 15px;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 15px;
+        justify-content: space-between;
+        @include full-width;
+      }
       .host-info {
         display: flex;
         align-items: center;
@@ -57,11 +88,14 @@
           margin-right: 10px;
           .host-first-name,
           .host-last-name {
-            font-family: 'Montserrat';
-            font-size: 18px;
-            font-weight: 500;
+            @include family;
+            @include size(18);
+            @include weight(500);
             color: #ff6060;
             margin: 0;
+            @media (max-width: 640px) {
+              @include size(12);
+            }
           }
         }
         img {
@@ -69,15 +103,27 @@
           height: 64px;
           border-radius: 50%;
           margin-top: 5px;
+          @media (max-width: 640px) {
+            width: 32px;
+            height: 32px;
+          }
         }
       }
       .logement-rating {
         display: flex;
         gap: 5px;
         margin-top: 15px;
+        @media (max-width: 640px) {
+          margin-top: 0;
+          order: -1;
+          flex-direction: row;
+        }
         .star {
-          font-size: 28px;
+          @include size(28);
           color: #e3e3e3;
+          @media (max-width: 640px) {
+            @include size(18);
+          }
           &.filled {
             color: #ff6060;
           }
@@ -87,27 +133,51 @@
   }
   .logement-collapses {
     display: flex;
-    justify-content: space-between;
     gap: 20px;
+    @media (max-width: 640px) {
+      flex-direction: column;
+    }
     .collapse {
       flex: 1;
     }
     .collapseAPropos {
       width: 50%;
+      @media (max-width: 640px) {
+        @include full-width;
+        margin-bottom: -10px;
+      }
     }
     .collapseAPropos-content {
-      padding-left: 15px;
-      width: 100%;
+      @include full-width;
       height: 100%;
+      margin-bottom: 0;
+      padding: 0;
+      top: -10px;
+      @media (max-width: 640px) {
+        margin-bottom: 10px;
+      }
       ul {
         margin-block-start: 0;
         list-style-type: none;
         margin-block-end: 0;
-        padding-inline-start: 0;
+        padding-inline-start: 20px;
+        padding-top: 30px;
+        padding-bottom: 40px;
+        @media (max-width: 640px) {
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
       }
-      &.open {
-        padding-bottom: 20px;
-        padding-top: 20px;
+      .collapse-description {
+        padding-inline-start: 20px;
+        padding-top: 30px;
+        padding-inline-end: 20px;
+        padding-bottom: 40px;
+        @media (max-width: 640px) {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          margin-bottom: -10px;
+        }
       }
     }
   }

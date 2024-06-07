@@ -1,11 +1,16 @@
+@import 'mixins';
+
 .slideshow {
   position: relative;
   height: 415px;
   overflow: hidden;
-  border-radius: 10px;
+  @include border-radius(10);
+  @media (max-width: 640px) {
+    height: 255px;
+  }
 
   .slideshow-image {
-    width: 100%;
+    @include full-width;
     height: 100%;
     object-fit: cover;
   }
@@ -15,10 +20,13 @@
     top: 50%;
     transform: translateY(-50%);
     background-color: transparent;
-    color: white;
+    @include text-white;
     border: none;
     cursor: pointer;
     font-size: 120px;
+    @media (max-width: 640px) {
+      @include size(60px);
+    }
     &-left {
       left: 10px;
     }
@@ -31,10 +39,13 @@
     bottom: 10px;
     left: 50%;
     background-color: transparent;
-    color: white;
+    @include text-white;
     padding: 5px 10px;
-    font-family: 'Montserrat';
-    font-weight: 500;
-    font-size: 18px;
+    @include family;
+    @include weight(500);
+    @include size(18);
+    @media (max-width: 640px) {
+      display: none;
+    }
   }
 }

@@ -1,9 +1,7 @@
 @import 'mixins';
 
 .footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-column-center;
   justify-content: center;
   padding-top: 68px;
   padding-bottom: 20px;
@@ -15,10 +13,17 @@
   }
   .footer-text {
     @include text-white;
-    font-size: 24px;
+    @include size(24);
     margin-top: 40px;
     text-align: center;
-    font-weight: 500;
-    font-family: 'Montserrat';
+    @include weight(500);
+    @include family;
+  }
+  @media (max-width: 640px) {
+    .footer-text {
+      text-align: center;
+      margin-right: 20%;
+      margin-left: 20%;
+    }
   }
 }

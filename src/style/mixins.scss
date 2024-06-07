@@ -9,9 +9,32 @@
   margin-left: 100px;
   margin-bottom: 50px;
 }
-@mixin border-radius {
-  border-radius: 25px;
+@mixin responsive-margin {
+  @media (max-width: 640px) {
+    margin: 20px;
+  }
+}
+@mixin size($size) {
+  font-size: $size;
+}
+@mixin weight($weight) {
+  font-weight: $weight;
+}
+@mixin family {
+  font-family: 'Montserrat';
+}
+@mixin border-radius($px) {
+  border-radius: $px;
 }
 @mixin full-width {
   width: 100%;
+}
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@mixin banniere {
+  position: relative;
+  text-align: center;
 }
