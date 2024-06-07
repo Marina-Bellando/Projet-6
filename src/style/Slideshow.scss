@@ -4,7 +4,7 @@
   position: relative;
   height: 415px;
   overflow: hidden;
-  @include border-radius(10);
+  @include border-radius(10px);
   @media (max-width: 640px) {
     height: 255px;
   }

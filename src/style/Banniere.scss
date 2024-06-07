@@ -5,11 +5,11 @@
   @include full-width;
   margin-bottom: 50px;
   @include black-background;
-  @include border-radius(25);
+  @include border-radius(25px);
   .banniere-image {
     @include full-width;
     height: 223px;
-    @include border-radius(25);
+    @include border-radius(25px);
     object-fit: cover;
     filter: brightness(0.6);
   }
