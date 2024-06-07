@@ -1,16 +1,15 @@
 @import 'mixins';
 
 .banniere {
-  position: relative;
-  text-align: center;
+  @include banniere;
   @include full-width;
   margin-bottom: 50px;
   @include black-background;
-  @include border-radius;
+  @include border-radius(25);
   .banniere-image {
     @include full-width;
     height: 223px;
-    @include border-radius;
+    @include border-radius(25);
     object-fit: cover;
     filter: brightness(0.6);
   }

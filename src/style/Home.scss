@@ -1,23 +1,33 @@
 @import 'mixins';
+
 .home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-column-center;
   @include margins;
+  @media (max-width: 640px) {
+    margin: 20px;
+  }
   .gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     @include full-width;
     background-color: #f6f6f6;
-    border-radius: 25px;
+    @include border-radius(25);
     padding-bottom: 50px;
+    @media (max-width: 640px) {
+      background-color: white;
+    }
   }
   .card-link {
     margin-top: 50px;
-    margin-right: 50px;
+    @media (max-width: 640px) {
+      margin: 0;
+    }
   }
-  .card-:last-child {
-    margin-right: 0;
+  .card-link:last-child {
+    margin-left: -400px;
+    @media (max-width: 640px) {
+      margin-left: 0px;
+    }
   }
 }

@@ -1,4 +1,5 @@
 @import 'mixins';
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -20,13 +21,21 @@
   .nav-link {
     text-decoration: none;
     color: #333;
-    font-weight: 500;
-    font-family: 'Montserrat';
-    font-size: 24px;
+    @include weight(500);
+    @include family;
+    @include size(24px);
     line-height: 34px;
   }
   .nav-link:hover,
   .nav-link.active {
     text-decoration: underline;
+  }
+  @media (max-width: 640px) {
+    margin: 20px;
+    .nav-link {
+      text-transform: uppercase;
+      @include size(12);
+      line-height: 17px;
+    }
   }
 }

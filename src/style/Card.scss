@@ -2,25 +2,27 @@
 
 .card {
   position: relative;
-  width: 340px;
-  height: 340px !important;
   overflow: hidden;
   border-radius: 10px;
+
   .card-image {
-    @include full-width;
-    height: 100%;
-    width: 100%;
+    width: 340px;
+    height: 340px;
     object-fit: cover;
     border-radius: 10px;
+    @media (max-width: 640px) {
+      @include full-width;
+      margin-bottom: 20px;
+    }
   }
   .card-title {
     position: absolute;
     bottom: 10px;
     left: 10px;
     color: white !important;
-    font-size: 18px;
-    font-weight: 700;
-    font-family: 'Montserrat';
+    @include size(18);
+    @include weight(700);
+    @include family;
     width: 50%;
   }
 }

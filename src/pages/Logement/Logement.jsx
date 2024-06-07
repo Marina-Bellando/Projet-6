@@ -1,5 +1,5 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 import { appartementListe } from '../../datas/appartementListe'
 import Slideshow from '../../components/Slideshow/Slideshow'
 import Collapse from '../APropos/Collapse'
@@ -7,12 +7,19 @@ import '../../style/Logement.scss'
 
 const Logement = () => {
   const { id } = useParams()
+  const navigate = useNavigate()
   const cleanId = id.startsWith(':') ? id.substring(1) : id
   const logement = appartementListe.find(
     (appartement) => appartement.id === cleanId
   )
+  useEffect(() => {
+    if (!logement) {
+      navigate('/error')
+    }
+  }, [logement, navigate])
+
   if (!logement) {
-    return <div>Logement non trouvé</div>
+    return null
   }
 
   const [firstName, lastName] = logement.host.name.split(' ')
@@ -53,7 +60,7 @@ const Logement = () => {
       </div>
       <div className="logement-collapses">
         <Collapse title="Description" customClass="logement-collapse">
-          {logement.description}
+          <div className="collapse-description">{logement.description}</div>
         </Collapse>
         <Collapse title="Équipements" customClass="logement-collapse">
           <ul>
