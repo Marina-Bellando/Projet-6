@@ -60,7 +60,7 @@ const Logement = () => {
       </div>
       <div className="logement-collapses">
         <Collapse title="Description" customClass="logement-collapse">
-          {logement.description}
+          <div className="collapse-description">{logement.description}</div>
         </Collapse>
         <Collapse title="Équipements" customClass="logement-collapse">
           <ul>
