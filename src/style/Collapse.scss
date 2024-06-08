@@ -22,10 +22,10 @@
     margin: 0;
     @include family;
     @include weight(700);
-    @include size(24);
+    @include size(24px);
     color: #ffffff;
     @media (max-width: 640px) {
-      @include size(13);
+      @include size(13px);
     }
   }
   .collapseAPropos-icon {

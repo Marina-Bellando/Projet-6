@@ -43,7 +43,7 @@
     padding: 5px 10px;
     @include family;
     @include weight(500);
-    @include size(18);
+    @include size(18px);
     @media (max-width: 640px) {
       display: none;
     }

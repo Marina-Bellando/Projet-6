@@ -15,18 +15,18 @@
     @include weight(700);
     @include family;
     @media (max-width: 640px) {
-      @include size(96);
+      @include size(96px);
     }
   }
 
   .error-message {
-    @include size(36);
+    @include size(36px);
     color: #ff6060;
     @include weight(500);
     @include family;
     margin-bottom: 60px;
     @media (max-width: 640px) {
-      @include size(18);
+      @include size(18px);
       margin-right: 20%;
       margin-left: 20%;
       width: 60%;
