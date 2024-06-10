@@ -20,9 +20,6 @@
 @mixin weight($weight) {
   font-weight: $weight;
 }
-@mixin family {
-  font-family: 'Montserrat';
-}
 @mixin border-radius($px) {
   border-radius: $px;
 }

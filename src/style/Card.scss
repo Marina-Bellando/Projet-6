@@ -23,7 +23,6 @@
     color: white !important;
     @include size(18px);
     @include weight(700);
-    @include family;
     width: 50%;
     @media (max-width: 640px) {
       bottom: 20px;

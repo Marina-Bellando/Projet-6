@@ -13,7 +13,6 @@
     @include size(288px);
     color: #ff6060;
     @include weight(700);
-    @include family;
     @media (max-width: 640px) {
       @include size(96px);
     }
@@ -23,7 +22,6 @@
     @include size(36px);
     color: #ff6060;
     @include weight(500);
-    @include family;
     margin-bottom: 60px;
     @media (max-width: 640px) {
       @include size(18px);
@@ -35,7 +33,6 @@
   .error-link {
     color: black;
     text-decoration: underline;
-    @include family;
     @include weight(500);
     @include size(16px);
     @media (max-width: 640px) {

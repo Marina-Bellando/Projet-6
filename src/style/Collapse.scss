@@ -20,7 +20,6 @@
   }
   h2 {
     margin: 0;
-    @include family;
     @include weight(700);
     @include size(24px);
     color: #ffffff;
@@ -47,7 +46,6 @@
     top: 0;
     transition: max-height 0.3s ease-out;
     background-color: #f6f6f673;
-    @include family;
     @include weight(400);
     @include size(18px);
     @media (max-width: 640px) {
