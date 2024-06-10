@@ -17,7 +17,6 @@
     margin-top: 40px;
     text-align: center;
     @include weight(500);
-    @include family;
   }
   @media (max-width: 640px) {
     .footer-text {
